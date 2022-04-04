@@ -264,31 +264,72 @@
   \end{alertblock}
 
   \begin{block}{Future Work}
+      Focus will be on a new autonomous landing method that can identify safe landing sites in previously unknown locations via terrain analysis.
+      This will be integrated with the fiducial landing method to allow drones to land at marked landing sites as well as unknown sites.
+      Additionally, we will redo the fiducial landing proof of concept with the hexacopters, using a camera with an embedded IMU to mitigate the orientation ambiguity problem.
+%      \vspace*{-0.5cm}
+      \textbf{Drone Upgrades:}
+      \vspace*{-0.25cm}
+      \begin{itemize}
+          \item Install new flight controller
+          \item Add optical flow/LIDAR velocity sensors to hexacopters (for GPS-free autonomous flight)
+          \item Add depth camera (with integrated RGB camera) to hexacopters
+          \begin{itemize}
+              \item Create protective gimbal mount
+          \end{itemize}
+          \item Test in the field
+      \end{itemize}
 
-      Overall, the work moving forward will focus on generating a new autonomous landing method that uses terrain analysis,
-      so that the landing will not be limited to known landing sites.
-      However, it will use a unified set of sensors so that the drone will be able to use the existing fiducial systems
-      whenever landing at a known landing site.
-      The method will also use the same paradigm of aiming a sensor via a gimbal, detecting a landing site,
-      and directing the drone using velocity or position commands.
-      We will first conduct landing experiments in simulation, then slowly move them onto physical drones.
-      \textbf{The scope of the project will be limited by the available sensors and testing environments.}
-      The sensors include RealSense depth cameras and LIDAR modules, which also provide RGB cameras for integration with our existing landing algorithm.
-      Additionally, they have IMUs for reliable orientation estimation, which will help eliminate the orientation ambiguity problem.
-      We will do the following tasks:
       \vspace*{-0.5cm}
-    \begin{itemize}
-        \item \textbf{Drone Upgrades:} add optical flow and LIDAR sensors to hexacopters for GPS-free autonomous flight.
-        \item \textbf{Re-test autonomous landing:} use the hexacopters, test outdoors.
-        \item \textbf{Develop free-form landing algorithm:} in simulation, use depth/LIDAR sensors to analyze terrain and find safe landing spots in unknown locations.
-        \item \textbf{Add depth camera to drones:} build a gimbal adapter, supplement power system and integrate with onboard hardware.
-        \item \textbf{Test in the real world:} we limit the scope of the tests to rural Icelandic environments where it is most applicable to our work.
-    \end{itemize}
-    \vspace*{-0.5cm}
-    \textbf{Publications:} We have submitted one paper on the fiducial system modifications, and another in progress describing the results of the proof of concept with the DJI Spark.
-      Anticipated publications include one paper detailing the free-form landing method, and one detailing real world tests of the unified system with both fiducial and free-form landing.
+      \textbf{Fiducial Landing with Hexacopters:}
+      \vspace*{-0.5cm}
+      \begin{itemize}
+          \item Redo fiducial landing proof of concept (with DJI Spark) outdoors with hexacopters
+          \item Use only the RGB sensor from the depth camera
+      \end{itemize}
+
+      \vspace*{-0.5cm}
+      \textbf{Free-form Autonomous Landing Algorithm}
+      \vspace{-0.5cm}
+      \begin{itemize}
+          \item Develop lightweight terrain analysis method
+          \item Use realistic synthetic sensors (depth camera)
+          \item Test on synthetic and real data
+          \item Carry out autonomous landings in simulation
+          \item Carry out autonomous landings in the field
+      \end{itemize}
+      \vspace*{-0.5cm}
+      Final product will (ideally) be: a successful mission where a drone 1) autonomously takes off from a marked landing pad,
+      2) scouts a location to land using the terrain analysis method and lands at that location, 3) takes off again, 4) locates and lands at the original marked landing pad.
 
   \end{block}
+
+%  \begin{block}{Future Work}
+%
+%      Overall, the work moving forward will focus on generating a new autonomous landing method that uses terrain analysis,
+%      so that the landing will not be limited to known landing sites.
+%      However, it will use a unified set of sensors so that the drone will be able to use the existing fiducial systems
+%      whenever landing at a known landing site.
+%      The method will also use the same paradigm of aiming a sensor via a gimbal, detecting a landing site,
+%      and directing the drone using velocity or position commands.
+%      We will first conduct landing experiments in simulation, then slowly move them onto physical drones.
+%      \textbf{The scope of the project will be limited by the available sensors and testing environments.}
+%      The sensors include RealSense depth cameras and LIDAR modules, which also provide RGB cameras for integration with our existing landing algorithm.
+%      Additionally, they have IMUs for reliable orientation estimation, which will help eliminate the orientation ambiguity problem.
+%      We will do the following tasks:
+%      \vspace*{-0.5cm}
+%    \begin{itemize}
+%        \item \textbf{Drone Upgrades:} add optical flow and LIDAR sensors to hexacopters for GPS-free autonomous flight.
+%        \item \textbf{Re-test autonomous landing:} use the hexacopters, test outdoors.
+%        \item \textbf{Develop free-form landing algorithm:} in simulation, use depth/LIDAR sensors to analyze terrain and find safe landing spots in unknown locations.
+%        \item \textbf{Add depth camera to drones:} build a gimbal adapter, supplement power system and integrate with onboard hardware.
+%        \item \textbf{Test in the real world:} we limit the scope of the tests to rural Icelandic environments where it is most applicable to our work.
+%    \end{itemize}
+%    \vspace*{-0.5cm}
+%    \textbf{Publications:} We have submitted one paper on the fiducial system modifications, and another in progress describing the results of the proof of concept with the DJI Spark.
+%      Anticipated publications include one paper detailing the free-form landing method, and one detailing real world tests of the unified system with both fiducial and free-form landing.
+%
+%  \end{block}
 
 
 
